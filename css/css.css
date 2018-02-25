@@ -1,0 +1,39 @@
+
+.header
+{
+	
+	background:;
+	border-top-style: 2px solid;
+    border-right-style: 2px solid;
+    border-bottom-style: 2px solid;
+    border-left-style: 2px solid;
+    padding: 45px;
+    width: 20%;
+	height : 80%;
+	
+	
+}
+.mynav{
+	
+	
+	  color: orange;
+	  font-size: 25px;
+	  font-family:"Trebuchet MS", Helvetica, sans-serif;
+	 position:absolute;
+	left:560px;
+	top: 5px;
+}
+.mynav{
+	
+	  color: orange;
+	  font-size: 20px;
+	  font-family:"Trebuchet MS", Helvetica, sans-serif;
+	 position:absolute;
+	top:450px;
+	
+
+}
+#map{
+	width:100%;
+	height:400px;
+}

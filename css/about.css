@@ -1,0 +1,39 @@
+body{
+	background-image:url("823I2by.jpg");
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+    background-position:center;
+	height: 100%;
+	background-size: cover;
+	
+}
+.mynav{
+	
+	
+	  color: orange;
+	  font-size: 25px;
+	  font-family:"Trebuchet MS", Helvetica, sans-serif;
+	 position:absolute;
+	left:560px;
+	top: 5px;
+}
+#video{
+		
+	 width:40% ;
+	 height:60%;
+	position:absolute;
+	top:100px;
+
+	 
+	
+}
+#navg{
+position:absolute;
+left:1300px;
+top:1090px;
+width:100px;
+height:40px;
+color:blue;
+
+background-color:orange;	
+}
