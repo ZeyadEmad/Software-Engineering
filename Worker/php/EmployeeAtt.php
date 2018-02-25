@@ -9,6 +9,13 @@
         
     </head>
     <body>
+        <br>
+        <br>
+        <a href="HomePage.php">Go back</a>
+        <br>
+        <br>
+        
+        
         <table>
               <thead>
                 <tr>
