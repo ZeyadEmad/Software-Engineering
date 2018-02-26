@@ -11,13 +11,11 @@
     <body>
         <br>
         <br>
-        <input type="button" onclick="location.href='HomePage.php'" value="Go back">
+        <button onclick="location.href='HomePage.php'"> Go Back </button>
         <br>
         <br>
-        
         
         <table>
-              <thead>
                 <tr>
                     <th>
                         Employee Name
@@ -32,9 +30,9 @@
                     <th>Day 8</th>
                     <th>Day 9</th>
                     <th>Day 10</th>
-                  </tr>    
-            </thead>
-            <tr>
+                </tr>    
+            <tbody>
+                <tr>
                       <td></td>
                       <td>full day <input type="radio" name="day1"><br>half day <input type="radio" name="day1"><br> day off <input type="radio" name="day1"></td>
                       <td>full day <input type="radio" name="day2"><br>half day <input type="radio" name="day2"><br> day off <input type="radio" name="day2"></td>
@@ -46,9 +44,10 @@
                       <td>full day <input type="radio" name="day8"><br>half day <input type="radio" name="day8"><br> day off <input type="radio" name="day8"></td>
                       <td>full day <input type="radio" name="day9"><br>half day <input type="radio" name="day9"><br> day off <input type="radio" name="day9"></td>
                       <td>full day <input type="radio" name="day10"><br>half day <input type="radio" name="day10"><br> day off <input type="radio" name="day10"></td>
-            </tr>
-                  
-            <tr>
+                </tr>
+            </tbody>
+                <tr>
+                    
                     <th></th>
                     <th>Day 11</th>
                     <th>Day 12</th>
@@ -60,11 +59,10 @@
                     <th>Day 18</th>
                     <th>Day 19</th>
                     <th>Day 20</th>
-            </tr>
+                </tr>
             <tbody>
-             <tr>
-                      <td></td>
-                        
+                <tr>
+                      <td></td>  
                       <td>full day <input type="radio" name="day11"><br>half day <input type="radio" name="day11"><br> day off <input type="radio" name="day11"></td>
                       <td>full day <input type="radio" name="day12"><br>half day <input type="radio" name="day12"><br> day off <input type="radio" name="day12"></td>
                       <td>full day <input type="radio" name="day13"><br>half day <input type="radio" name="day13"><br> day off <input type="radio" name="day13"></td>
@@ -75,10 +73,9 @@
                       <td>full day <input type="radio" name="day18"><br>half day <input type="radio" name="day18"><br> day off <input type="radio" name="day18"></td>
                       <td>full day <input type="radio" name="day19"><br>half day <input type="radio" name="day19"><br> day off <input type="radio" name="day19"></td>
                       <td>full day <input type="radio" name="day20"><br>half day <input type="radio" name="day20"><br> day off <input type="radio" name="day20"></td>
-              </tr>
+                </tr>
             </tbody>
-              
-            <tr>
+                <tr>
                     <th></th>
                     <th>Day 21</th>
                     <th>Day 22</th>
@@ -90,10 +87,9 @@
                     <th>Day 28</th>
                     <th>Day 29</th>
                     <th>Day 30</th>
-              </tr>
-                  
-              <tbody>
-                  <tr>
+                </tr>
+            <tbody>      
+                <tr>
                       <td></td>
                       <td>full day <input type="radio" name="day21"><br>half day <input type="radio" name="day21"><br> day off <input type="radio" name="day21"></td>
                       <td>full day <input type="radio" name="day22"><br>half day <input type="radio" name="day22"><br> day off <input type="radio" name="day22"></td>
@@ -105,14 +101,12 @@
                       <td>full day <input type="radio" name="day28"><br>half day <input type="radio" name="day28"><br> day off <input type="radio" name="day28"></td>
                       <td>full day <input type="radio" name="day29"><br>half day <input type="radio" name="day29"><br> day off <input type="radio" name="day29"></td>
                       <td>full day <input type="radio" name="day30"><br>half day <input type="radio" name="day30"><br> day off <input type="radio" name="day30"></td>
-                  </tr>
-                  
-              </tbody>
-
-            
+                </tr>
+            </tbody>
+   
         </table>
         
-        <button type="submit" id="mybtn"> Confirm attendance </button>
+        <button type="submit" class="btn1"> Submit Attendance </button>
         
     </body>
 </html>
