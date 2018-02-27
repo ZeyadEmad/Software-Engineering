@@ -89,6 +89,9 @@ foreach($btns as $btn)
 	<link type="text/css" href="../css/addcou.css" rel="stylesheet" />
 	<link type="text/css" href="../css/Room.css" rel="stylesheet" />
 	<link type="text/css" href="../css/staff.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/addworker1.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <meta charset="UTF-8">
 </head>
 <body>
 
@@ -132,12 +135,78 @@ document.getElementById("defaultOpen").click();
 
 
 <div id="Add-new-user" class="tabcontent" >
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
+
+<h2> Enter New User:</h2>
+<div class="vertical-menu">
+<form method="post" action="" class="form1">
+        <div class="contentform">
+            <div class="leftgroup">
+                <div class="form-group">
+                    <p class="p1" >First Name</p>
+                    <span class="icon"><i class="fa fa-male"></i></span>
+                    <input  class="input1" type="text" name="fname">
+                </div>
+                <div class="form-group">
+                    <p class="p1">Last Name</p>
+                    <span class="icon"><i class="fa fa-male"></i></span>
+                    <input class="input1" type="text" name="lname">
+                </div>
+                <div class="form-group">
+                    <p class="p1">E-mail</p>
+                    <span class="icon"><i class="fa fa-envelope-o"></i></span>
+                    <input class="input1" type="email" name="mail">
+                </div>
+                <div class="form-group">
+                    <p class="p1">Home Address</p>
+                    <span class="icon"><i class="fa fa-home"></i></span>
+                    <input class="input1" type="text" name="address">
+                </div>
+                <div class="form-group">
+                    <p class="p1">City</p>
+                    <span class="icon"><i class="fa fa-building-o"></i></span>
+                    <input class="input1" type="text" name="city">
+                </div>
+                
+            </div>
+            <div class="rightgroup">
+				<div class="form-group">
+                    <p class="p1">Phone number</p>
+                    <span class="icon"><i class="fa fa-phone"></i></span>
+                    <input class="input1" type="text" name="number">
+                </div>
+                <div class="form-group">
+                    <p class="p1">Job Role</p>
+                    <span class="icon"><i class="fa fa-info"></i></span>
+                    <select name="jobrole" class="select1" class="form-control selectpicker">
+                      <optgroup label="Please select the job role" id="list">
+                        <option >Dummy</option>
+                        <option >Dummy</option>
+                        <option >Dummy</option>
+                        <option >Dummy</option>
+                        <option >Dummy</option>
+                      </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p class="p1">Salary</p>
+                    <span class="icon"><i class="fa fa-dollar"></i></span>
+                    <input class="input1" type="text" name="salary">
+                </div>
+                <div class="form-group">
+                    <p class="p1">Password</p>
+                    <span class="icon"><i class="fa fa-building-o"></i></span>
+                    <input class="input1" type="password" name="pass" />
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="create-profile" value="Create profile">Create profile</button>
+    </form>
+</div>
 </div>
 
+
 <div id="Add-new-course" class="tabcontent">
-  
+ 
 <h2> Enter New Cousre Information:</h2>
 <form  name="form_name" action="" method ="post" class="from-horizontal" >
 Course Code:<br>
@@ -265,13 +334,14 @@ Course Color:<br>
 
 
 <div id="Total-Bills" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
+  <h3>Total Bills</h3>
 </div>
 
 <div id="Staff" class="tabcontent">
   <h1>View Staff</h1>
-			
+		
+<input type="text" name="search">
+<button>Search for Students</button><br><br>
 		<div class="vertical-menu">
 		<table cellpadding="2" cellspacing="0">
 		
@@ -279,51 +349,51 @@ Course Color:<br>
 			<tr>
 			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
 			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='AddNewWorker.php'">Edit</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeAtt.php'">Attendance</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeBills.php'">Salary</button> </td>
 			</tr>
 			<tr>
 			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
 			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='AddNewWorker.php'">Edit</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeAtt.php'">Attendance</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeBills.php'">Salary</button> </td>
 			</tr>
 			<tr>
 			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
 			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='AddNewWorker.php'">Edit</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeAtt.php'">Attendance</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeBills.php'">Salary</button> </td>
 			</tr>
 			<tr>
 			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
 			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='AddNewWorker.php'">Edit</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeAtt.php'">Attendance</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeBills.php'">Salary</button> </td>
 			</tr>
 			<tr>
 			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
 			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='AddNewWorker.php'">Edit</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeAtt.php'">Attendance</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeBills.php'">Salary</button> </td>
 			</tr>
 			<tr>
 			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
 			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='AddNewWorker.php'">Edit</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeAtt.php'">Attendance</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeBills.php'">Salary</button> </td>
 			</tr>
 			<tr>
 			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
 			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='AddNewWorker.php'">Edit</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeAtt.php'">Attendance</button> </td>
+			<td><button class="button3" id="bb" onclick="parent.location='EmployeeBills.php'">Salary</button> </td>
 			</tr>
 			
 		</tbody>
@@ -339,11 +409,41 @@ Course Color:<br>
 	</div>
 	<br>
 	<button class="button1" id="bf1" onclick="parent.location='AddRoom.php'">Add new room</button>
+	<br>
+	<br>
+	<br>
+
 </div>
 
 </div><div id="View-requests" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
+  <h3>New Requests</h3>
+  
+	<table>
+	  <tr>
+		<th>Content</th>
+		<th>Detalis</th> 
+	  </tr>
+	  <tr>
+		<td>***</td>
+		<td>empty</td>
+	  </tr>
+	  <tr>
+		<td>***</td>
+		<td>----</td>
+	  </tr>
+	  <tr>
+		<td>***</td>
+		<td>empty</td>
+	  </tr>
+		<tr>
+		<td>***</td>
+		<td>empty</td>
+	  </tr>
+		<tr>
+		<td>***</td>
+		<td>----</td>
+	  </tr>
+	</table>
 </div>
 
 

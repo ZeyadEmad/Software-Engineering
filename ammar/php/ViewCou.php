@@ -38,74 +38,34 @@ foreach($btns as $btn)
 	return $str;
 	$conn->close();
 	}
-function getButtons1()
-{
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "projectone";
-	
-
-$conn = new mysqli($servername, $username, $password, $db);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "SELECT ID,Number FROM `rooms` ";
-$result = $conn->query($sql);
-$x=0;
-$btns= array();
-	
-
-if ($result->num_rows > 0) {
-	while($row = $result->fetch_assoc()) 
-		{
-			//$btns[$x]=array($row["ID"]=>$row["Number"]);
-			$btns[$x]=array('ID'=>$row['ID'],'Num'=>$row['Number']);
-			$x=$x+1;
-		}
-	}
-	
-$str='';
-
-	
-foreach($btns as $btn)
-	{
-		$pass='Calendar.php';
-		$str.='&nbsp;<input type="button"  value="'.$btn['Num'].'" name="btn_'.$btn['Num'].'" id="button1" class="button1" onclick=window.parent.location.href="Calendar.php" target="_parent"/>';
-	
-	}
-	return $str;
-	$conn->close();
-	}
 	
 	
 ?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
-	<title>Home </title>
+	<title>View Course </title>
 	<link type="text/css" href="../css/home.css" rel="stylesheet" />
-	<link type="text/css" href="../css/addcou.css" rel="stylesheet" />
-	<link type="text/css" href="../css/Room.css" rel="stylesheet" />
 	<link type="text/css" href="../css/staff.css" rel="stylesheet" />
+    <link type="text/css" href="../css/Room.css" rel="stylesheet" />
+	<link type="text/css" href="../css/addcou.css" rel="stylesheet" />
+<style>
+
+.button1
+{
+	text-align: center;
+	height:100px;
+	width: 100px;
+	Background-color:#ffcccc;
+	position:static;
+}
+
+</style>
 </head>
 <body>
-
-<div id="a">
-<img src="../img/img_avatar.png" alt="Avatar">
-</div>
-<div id="aa">
-<h1>Username</h1>
-</div>
+<h1> Course code</h1>
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Add-new-user')">Add new user</button>
-  <button class="tablinks" onclick="openCity(event, 'Add-new-course')">Add new course</button>
-  <button class="tablinks" onclick="openCity(event, 'View-courses')">View courses</button>
-  <button class="tablinks" onclick="openCity(event, 'Total-Bills')">Total Bills</button>
-  <button class="tablinks" onclick="openCity(event, 'Staff')">Staff</button>
-  <button class="tablinks" onclick="openCity(event, 'Rooms')">Rooms</button>
-  <button class="tablinks" onclick="openCity(event, 'View-requests')">View requests</button>
+  <button class="tablinks" onclick="openCity(event, 'student')">View student</button>
+  <button class="tablinks" onclick="openCity(event, 'Edit-course')">Edit</button>
 </div>
 
 
@@ -131,12 +91,7 @@ document.getElementById("defaultOpen").click();
 </script>
 
 
-<div id="Add-new-user" class="tabcontent" >
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Add-new-course" class="tabcontent">
+<div id="Edit-course" class="tabcontent">
   
 <h2> Enter New Cousre Information:</h2>
 <form  name="form_name" action="" method ="post" class="from-horizontal" >
@@ -153,8 +108,6 @@ Room:<br>
 <div id="buttons_panel">
 	<?php echo getButtons();?>
 </div>
-
-
 <br>
 Select Weekdays & Time:<br>
 <div>
@@ -252,104 +205,59 @@ Course Color:<br>
 </form>
 </div>
 
-<div id="View-courses" class="tabcontent">
-  <h2>All Courses</h2>
-  <button class="button1" id="bf1" onclick="parent.location='ViewCou.php'">Eng101</button>
-  <button class="button1" id="bf1" onclick="parent.location='ViewCou.php'">Eng102</button>
-  <button class="button1" id="bf1" onclick="parent.location='ViewCou.php'">Math101</button>
-  <button class="button1" id="bf1" onclick="parent.location='ViewCou.php'">Ph101</button>
-  <button class="button1" id="bf1" onclick="parent.location='ViewCou.php'">Arb101</button>
-  <button class="button1" id="bf1" onclick="parent.location='ViewCou.php'">Abr102</button>
-  
-</div>
 
 
-<div id="Total-Bills" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-<div id="Staff" class="tabcontent">
-  <h1>View Staff</h1>
+<div id="student" class="tabcontent">
+  <h1>View Students</h1>
 			
-		<div class="vertical-menu">
-		<table cellpadding="2" cellspacing="0">
-		
-		<tbody>
-			<tr>
-			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
-			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
-			</tr>
-			<tr>
-			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
-			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
-			</tr>
-			<tr>
-			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
-			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
-			</tr>
-			<tr>
-			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
-			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
-			</tr>
-			<tr>
-			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
-			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
-			</tr>
-			<tr>
-			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
-			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
-			</tr>
-			<tr>
-			<td><img src="../img/img_avatar.png" alt="Avatar"></td>
-			<td>USER1 </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Attendance</button> </td>
-			<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Salary</button> </td>
-			</tr>
-			
-		</tbody>
-		</table>
-		</div>
-</div>
-
-<div id="Rooms" class="tabcontent">
+	<div class="vertical-menu">
+	<table cellpadding="2" cellspacing="0">
 	
-<h2> Rooms:</h2>
-	<div id="buttons_panel">
-	<?php echo getButtons1();?>
+	<tbody>
+		<tr>
+		<td><img src="../img/img_avatar.png" alt="Avatar"></td>
+		<td>USER1 </td>
+		<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
+		</tr>
+		<tr>
+		<td><img src="../img/img_avatar.png" alt="Avatar"></td>
+		<td>USER1 </td>
+		<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
+		</tr>
+		<tr>
+		<td><img src="../img/img_avatar.png" alt="Avatar"></td>
+		<td>USER1 </td>
+		<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
+		</tr>
+		<tr>
+		<td><img src="../img/img_avatar.png" alt="Avatar"></td>
+		<td>USER1 </td>
+		<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
+		</tr>
+		<tr>
+		<td><img src="../img/img_avatar.png" alt="Avatar"></td>
+		<td>USER1 </td>
+		<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
+		</tr>
+		<tr>
+		<td><img src="../img/img_avatar.png" alt="Avatar"></td>
+		<td>USER1 </td>
+		<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
+		</tr>
+		<tr>
+		<td><img src="../img/img_avatar.png" alt="Avatar"></td>
+		<td>USER1 </td>
+		<td><button class="button3" id="bb" onclick="parent.location='BackDisk.php'">Edit</button> </td>
+		</tr>
+		
+	</tbody>
+	</table>
 	</div>
-	<br>
-	<button class="button1" id="bf1" onclick="parent.location='AddRoom.php'">Add new room</button>
-</div>
-
-</div><div id="View-requests" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
 </div>
 
 
-<br><br><br><br>
-
-<button class="button1" id="bf1" onclick="parent.location='BackDisk.php'">Logout</button>
+<button class="button1" id="bf1" onclick="parent.location='BackDisk.php'">Back</button>
+ 
 
 
 </body>

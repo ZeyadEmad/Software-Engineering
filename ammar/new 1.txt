@@ -1,0 +1,162 @@
+{		<tr>
+        <td>4:00 PM</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+				<td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+		<tr>
+        <td>5:00 PM</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+				<td> </td>
+                <td> </td>
+            </tr>
+		<tr>
+        <td>6:00 PM</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+				<td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+		<tr>
+        <td>7:00 PM</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+				<td> </td>
+                <td> </td>
+            </tr>
+		<tr>
+        <td>8:00 PM</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+				<td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+		<tr>
+        <td>9:00 PM</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+				<td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+		<tr>
+        <td>10:00 PM</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+				<td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+		<tr>
+        <td>11:00 PM</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+				<td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+			
+			
+__}___________________________________________________________________
+
+
+
+<input type="checkbox" name="days" id="1" value="1"> Sunday<br>
+<input type="checkbox" name="days" id="2" value="1"> Monday<br>
+<input type="checkbox" name="days" id="3" value="1"> Tuesday<br>
+<input type="checkbox" name="days" id="4" value="1"> Wednesday<br>
+<input type="checkbox" name="days" id="5" value="1"> Thursday<br>
+<input type="checkbox" name="days" id="6" value="1"> Friday<br>
+
+
+
+
+<input type="radio" name="term1" id="0" >09:00AM - 11:00AM</input><br>
+		<input type="radio" name="term1" id="1" >11:00AM - 01:00PM</input><br>
+		<input type="radio" name="term1" id="2" >01:00PM - 03:00PM</input><br>
+		<input type="radio" name="term1" id="3" >03:00PM - 05:00PM</input><br>
+		<input type="radio" name="term1" id="4" >05:00PM - 07:00PM</input><br>
+		<input type="radio" name="term1" id="5" >07:00PM - 09:00PM</input><br>
+		<input type="radio" name="term1" id="6" >09:00PM - 11:00PM</input><br>
+		
+		
+		
+		
+<div class="dropdown">
+	  <button class="dropbtn">Friday</button>
+	  <div class="dropdown-content">
+		<a href="#">09:00 AM -> 11:00 AM</a>
+		<a href="#">11:00 AM -> 01:00 PM</a>
+		<a href="#">01:00 PM -> 03:00 PM</a>
+		<a href="#">03:00 PM -> 05:00 PM</a>
+		<a href="#">05:00 PM -> 07:00 PM</a>
+		<a href="#">07:00 PM -> 09:00 PM</a>
+		<a href="#">09:00 PM -> 11:00 PM</a>
+	  </div>
+</div>
+
+
+/*	while(list($k,$v)=each($btns))
+	{
+		$str.='&nbsp;<input type="button" value="'.$v.'" name="btn_'.$k.'" id="button1" class="button1"/>';
+	}*/
+	
+	
+	
+<input type="radio" class="r1" name="room" id="1" > 101
+<input type="radio" class="r1" name="room" id="2" > 102
+<input type="radio" class="r1" name="room" id="3" > 103
+<input type="radio" class="r1" name="room" id="4" > 104
+
+
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+  <h2>Fixed Full-height Side Nav</h2>
+  <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
+  <p>Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
+  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+</div>
+
+
+
+onclick="parent.location='Calendar.php'"
+
+
+
