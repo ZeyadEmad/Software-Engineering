@@ -11,12 +11,7 @@
     <body>
         <br>
         <br>
-<<<<<<< HEAD
-        <a href="HomePage.php">Go back</a>
-        <br>
-        <br>
-=======
-        <button onclick="location.href='HomePage.php'"> Go Back </button>
+        <button onclick="location.href='BackDisk.php'" class="btn1"> Go Back </button>
         <br>
         <br>
         
@@ -112,78 +107,7 @@
         </table>
         
         <button type="submit" class="btn1"> Submit Attendance </button>
->>>>>>> 41af9b8ee36a0ea5d3c265187ebe0776504c647c
         
-        
-        <table>
-              <thead>
-                <tr>
-                    <th>
-                        Employee Name
-                    </th>
-                    <th>
-                        Saturday
-                    </th>
-                    <th>
-                        Sunday
-                    </th>
-                    <th>
-                        Monday
-                    </th>
-                    <th>
-                        Tuesday
-                    </th>
-                    <th>
-                        Wednesday
-                    </th>
-                    <th>
-                        Thursday
-                    </th>
-                    <th>
-                        Friday
-                    </th>
-              </tr>
-                  
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>
-                        Dummy
-                      </td>
-                      <td>
-                        Dummy
-                          <input type="checkbox" name="day1">
-                      </td>
-                      <td>
-                        Dummy
-                          <input type="checkbox" name="day2">
-                      </td>
-                      <td>
-                        Dummy
-                          <input type="checkbox" name="day3">
-                      </td>
-                      <td>
-                        Dummy
-                          <input type="checkbox" name="day4">
-                      </td>
-                      <td>
-                        Dummy
-                          <input type="checkbox" name="day5">
-                      </td>
-                      <td>
-                        Dummy
-                          <input type="checkbox" name="day6">
-                      </td>
-                      <td>
-                        Dummy
-                          <input type="checkbox" name="day7">
-                      </td>
-                  </tr>
-                  
-              </tbody>
-
-            
-        </table>
     </body>
 </html>
 
