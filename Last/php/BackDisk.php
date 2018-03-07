@@ -2,10 +2,9 @@
 function getButtons()
 {
 $servername = "localhost";
-$username = "root";
-$password = "";
-$db = "projectone";
-	
+$username = "id4864825_ammaryasser53";
+$password = "123456";
+$db = "id4864825_project";
 
 $conn = new mysqli($servername, $username, $password, $db);
 if ($conn->connect_error) {
@@ -41,9 +40,9 @@ foreach($btns as $btn)
 function getButtons1()
 {
 $servername = "localhost";
-$username = "root";
-$password = "";
-$db = "projectone";
+$username = "id4864825_ammaryasser53";
+$password = "123456";
+$db = "id4864825_project";;
 	
 
 $conn = new mysqli($servername, $username, $password, $db);
@@ -89,7 +88,7 @@ foreach($btns as $btn)
 	<link type="text/css" href="../css/addcou.css" rel="stylesheet" />
 	<link type="text/css" href="../css/Room.css" rel="stylesheet" />
 	<link type="text/css" href="../css/staff.css" rel="stylesheet" />
-	<link rel="stylesheet" href="../css/addworker1.css">
+	<link type="text/css" rel="stylesheet" href="../css/addworker1.css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <meta charset="UTF-8">
 </head>

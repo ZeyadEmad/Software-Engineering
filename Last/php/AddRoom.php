@@ -13,10 +13,10 @@
 <h1> Add New Room</h1>	
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "projectone";
-$conn = new mysqli($servername, $username, $password, $dbname);
+$username = "id4864825_ammaryasser53";
+$password = "123456";
+$db = "id4864825_project";
+$conn = new mysqli($servername, $username, $password, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 

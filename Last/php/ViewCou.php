@@ -2,9 +2,9 @@
 function getButtons()
 {
 $servername = "localhost";
-$username = "root";
-$password = "";
-$db = "projectone";
+$username = "id4864825_ammaryasser53";
+$password = "123456";
+$db = "id4864825_project";
 	
 
 $conn = new mysqli($servername, $username, $password, $db);
