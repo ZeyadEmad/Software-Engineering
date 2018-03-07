@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> 41af9b8ee36a0ea5d3c265187ebe0776504c647c
 body{
     font-family: "Open Sans", sans-serif;
     background-color: whitesmoke;
@@ -29,7 +33,12 @@ tr:nth-child(even){
     color: whitesmoke;
     background-color: #103D59;
 }
+<<<<<<< HEAD
+
+
+=======
 .btn1{
     position: relative;
     left:45%;
 }
+>>>>>>> 41af9b8ee36a0ea5d3c265187ebe0776504c647c
