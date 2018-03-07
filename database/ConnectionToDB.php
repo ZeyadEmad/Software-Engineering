@@ -11,7 +11,7 @@
             $this->servername = "localhost";
             $this->username = "root";
             $this->password = "";
-            $this->db = "test";
+            $this->db = "winner";
             $this->con = $this->Connect();
         }
 
