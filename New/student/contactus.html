@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/contactus.css">
+</head> 
+<body>
+
+<div id="map" >
+</div>
+<div class="mynav">
+
+
+<p>Email: info@winnereducational.com</P>
+
+<P>mobile no: 0100 158 3585</p>
+<P>phone no: (02) 289765677</P>
+
+<P> 9:00 am – 22:00 pm (EET)</P>
+</div>
+<script type="text/javascript"> 
+ 
+ function myMap() {
+ 
+    var mapOptions = {
+        center: new google.maps.LatLng(  30.021667  ,  31.303333),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    }
+	
+   
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+ </script>
+ <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+ <input type="button" value="Back" onclick = "location.href='shome.php'"> 
+</body>
+<html>

@@ -1,0 +1,62 @@
+ table {            
+            background-color: tan;   
+            border: 5px solid cornflowerblue;  
+            border-spacing: 10px; 
+            font-family: Arial, Helvetica, sans-serif       
+        }
+
+        th {
+            background-color: cornflowerblue;
+            border: 2px solid cornflowerblue;
+            color: white;
+            padding: 20px;
+        }
+       
+        td {
+            border: 2px solid cornflowerblue;
+            padding: 10px;
+            text-align: center;
+            vertical-align: middle;
+            border-top: 0;
+            border-bottom: 0;
+        }
+
+        .th-title {
+            background-color: white;
+            border-top: 0;
+            border-bottom: 0;            
+            color: black;
+        }   
+        #btn2{
+		      
+	    width:140px;
+	    height:40px;
+	     color:blue;
+        background-color:gray;
+         font-size:15px;
+      }		
+	      #btn3{
+		      
+	    width:140px;
+	    height:40px;
+	     color:blue;
+        background-color:gray;
+         font-size:15px;
+      }	
+	  #sel1{
+		background-color: cornflowerblue;
+		padding: 5px 5px 5px 5px ;
+		color: white;
+		
+	  }
+	  
+	   #sel2{
+		background-color: cornflowerblue;
+		padding: 5px 5px 5px 5px ;
+		color: white;
+	  }
+	  option
+	  {
+	   background-color:gray;
+	  }
+	  
