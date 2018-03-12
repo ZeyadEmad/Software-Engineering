@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body{
     font-family: "Open Sans", sans-serif;
     background-color: whitesmoke;
@@ -43,49 +42,3 @@ tr:nth-child(even){
 	Background-color:#ffcccc;
 	position:static;
 }
-=======
-body{
-    font-family: "Open Sans", sans-serif;
-    background-color: whitesmoke;
-}
-table{
-    width: 100%;
-    margin: auto;
-    position: relative;
-    top: 0px;
-}
-th{
-    font-family:Georgia;
-    color: #ffc505;
-    text-align: center;
-    line-height:50px;
-    background-color:#103D59;
-}
-td{
-    font-family:Palatino Linotype;
-    text-align: center;
-    line-height: 40px;
-    /* color: darkgrey; */
-}
-tr:nth-child(odd){
-    color: black;
-    background-color: white;
-}
-tr:nth-child(even){
-    color: whitesmoke;
-    background-color: #103D59;
-}
-.btn1{
-    position: relative;
-    left:45%;
-}
-
-.button1
-{
-	text-align: center;
-	height:100px;
-	width: 100px;
-	Background-color:#ffcccc;
-	position:static;
-}
->>>>>>> 39b9fc79caa1db37a4edd2e1b2951c17173e9245
