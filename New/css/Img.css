@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 img {
     border-radius: 50%;
 	height: 100px;
@@ -16,3 +17,23 @@ img {
 	height: 50px;
 	
 }
+=======
+img {
+    border-radius: 50%;
+	height: 100px;
+}
+
+
+#a{
+	text-align: right;
+	width:100%;
+	height: 150px;
+}
+
+#aa{
+	text-align: left;
+	width:40%;
+	height: 50px;
+	
+}
+>>>>>>> 39b9fc79caa1db37a4edd2e1b2951c17173e9245

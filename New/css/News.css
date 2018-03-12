@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -10,3 +11,17 @@ table#t01 {
     width: 100%;    
     background-color: #f1f1c1;
 }
+=======
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;    
+    background-color: #f1f1c1;
+}
+>>>>>>> 39b9fc79caa1db37a4edd2e1b2951c17173e9245

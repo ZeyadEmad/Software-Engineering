@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .button1
 {
 	text-align: center;
@@ -5,4 +6,13 @@
 	width: 100px;
 	Background-color:#ffcccc;
 	position:static;
+=======
+.button1
+{
+	text-align: center;
+	height:100px;
+	width: 100px;
+	Background-color:#ffcccc;
+	position:static;
+>>>>>>> 39b9fc79caa1db37a4edd2e1b2951c17173e9245
 }

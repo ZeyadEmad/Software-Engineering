@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 body{
       color: orange;
@@ -7,3 +8,14 @@ body{
 	 background-color : gray;
 }
 
+=======
+
+body{
+      color: orange;
+	  font-size: 25px;
+	  font-family:"Trebuchet MS", Helvetica, sans-serif;
+	  position:absolute;
+	 background-color : gray;
+}
+
+>>>>>>> 39b9fc79caa1db37a4edd2e1b2951c17173e9245
