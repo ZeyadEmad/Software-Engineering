@@ -1,0 +1,2 @@
+
+body{font-family:"Open Sans",sans-serif;background-color:whitesmoke}table{width:100%;margin:auto;position:relative;top:0}th{font-family:Georgia;color:#ffc505;text-align:center;line-height:50px;background-color:#103d59}td{font-family:Palatino Linotype;text-align:center;line-height:40px}tr:nth-child(odd){color:black;background-color:white}tr:nth-child(even){color:whitesmoke;background-color:#103d59}.btn1{position:relative;left:45%}.button1{text-align:center;height:100px;width:100px;color:#fcc;position:static}

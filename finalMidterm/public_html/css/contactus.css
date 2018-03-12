@@ -1,0 +1,13 @@
+.mynav{
+    color: orange;
+    font-size: 20px;
+    font-family:"Trebuchet MS", Helvetica, sans-serif;
+    position:absolute;
+    top:450px;
+    
+
+}
+#map{
+    width: 600px;
+    height: 400px;
+}
