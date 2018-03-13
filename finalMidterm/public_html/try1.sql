@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2018 at 10:50 PM
+-- Generation Time: Mar 13, 2018 at 05:11 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -28,10 +28,36 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `add-extra-value` (
   `id` int(11) NOT NULL,
-  `usertype-id` int(11) NOT NULL,
+  `user-id` int(11) NOT NULL,
   `extradetails-id` int(11) NOT NULL,
   `value` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `add-extra-value`
+--
+
+INSERT INTO `add-extra-value` (`id`, `user-id`, `extradetails-id`, `value`) VALUES
+(36, 39, 3, ''),
+(37, 39, 2, '1200'),
+(38, 40, 3, 'shar3 elnasr'),
+(39, 40, 2, '1200'),
+(40, 41, 3, 'shar3 elnasr'),
+(41, 41, 2, '1200'),
+(42, 42, 3, 'shar3 elnasr'),
+(43, 42, 2, '1200'),
+(44, 43, 3, 'shar3 elnasr'),
+(45, 43, 2, '1200'),
+(46, 44, 3, 'shar3 elnasr'),
+(47, 44, 2, '1200'),
+(48, 45, 3, 'shar3 elnasr'),
+(49, 45, 2, '1200'),
+(50, 46, 1, ''),
+(51, 46, 2, ''),
+(52, 47, 1, ''),
+(53, 47, 2, ''),
+(54, 48, 1, ''),
+(55, 48, 2, '');
 
 -- --------------------------------------------------------
 
@@ -79,9 +105,17 @@ CREATE TABLE `calender` (
 
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
-  `cousre-name` varchar(255) NOT NULL,
+  `course-name` varchar(255) NOT NULL,
   `Level` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`id`, `course-name`, `Level`) VALUES
+(1, 'English', 'year 12'),
+(2, 'Math', 'year 12');
 
 -- --------------------------------------------------------
 
@@ -91,8 +125,21 @@ CREATE TABLE `courses` (
 
 CREATE TABLE `day` (
   `id` int(10) NOT NULL,
-  `day` int(10) NOT NULL
+  `day` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `day`
+--
+
+INSERT INTO `day` (`id`, `day`) VALUES
+(1, 'Saturday'),
+(2, 'Sunday'),
+(3, 'Monday'),
+(4, 'Tuesday'),
+(5, 'Wednesday'),
+(6, 'Thursday'),
+(7, 'Friday');
 
 -- --------------------------------------------------------
 
@@ -128,11 +175,11 @@ CREATE TABLE `group` (
 
 CREATE TABLE `group-details` (
   `id` int(11) NOT NULL,
-  `Group-code` int(11) NOT NULL,
+  `Group-code` varchar(20) NOT NULL,
   `course-id` int(11) NOT NULL,
-  `calendar-id` int(11) NOT NULL,
   `room-id` int(11) NOT NULL,
-  `teacher-id` int(11) NOT NULL
+  `teacher-id` int(11) NOT NULL,
+  `color` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -193,6 +240,15 @@ CREATE TABLE `room` (
   `number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`id`, `number`) VALUES
+(1, 10),
+(12, 101),
+(15, 102);
+
 -- --------------------------------------------------------
 
 --
@@ -252,8 +308,21 @@ CREATE TABLE `student-attendence` (
 
 CREATE TABLE `time` (
   `id` int(10) NOT NULL,
-  `time` int(10) NOT NULL
+  `time` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `time`
+--
+
+INSERT INTO `time` (`id`, `time`) VALUES
+(1, '09:00AM - 11:00AM'),
+(2, '11:00AM - 01:00PM'),
+(3, '01:00PM - 03:00PM'),
+(4, '03:00PM - 05:00PM'),
+(5, '05:00PM - 07:00PM'),
+(6, '07:00PM - 09:00PM'),
+(7, '09:00PM - 11:00PM');
 
 -- --------------------------------------------------------
 
@@ -279,12 +348,30 @@ CREATE TABLE `user` (
   `last-name` varchar(255) DEFAULT NULL,
   `age` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `telephone` varchar(255) NOT NULL,
-  `gender` varchar(255) DEFAULT NULL,
-  `type-id` int(11) NOT NULL
+  `gender` tinyint(1) DEFAULT NULL,
+  `type-id` int(11) NOT NULL,
+  `Pic` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `First-name`, `last-name`, `age`, `email`, `username`, `password`, `address`, `telephone`, `gender`, `type-id`, `Pic`) VALUES
+(1, 'Ammar', 'yasser', 223, 'ammaryasser53@yahoo.com', 'ammaryasser53', '123456', 'Masr Elgdeda', '01111216123', 1, 1, ''),
+(3, 'ahmed', 'mohamed', 18, 'ahmed_mohamed@yahoo.com', 'ahmed101', '12345', 'Madent Nasr', '011111', 1, 5, 'img_avatar.png'),
+(10, 'aml', 'mohamed', 18, 'aml_mohamed@yahoo.com', 'aml101', '12346', 'Madent Nasr', '011111', 0, 5, 'img_avatar2.png'),
+(35, 'ahmed', 'omar', 30, 'ahmed_mohamed@yahoo.com', 'ahmed101', '12345', 'Madent Nasr', '011111', 1, 4, 'img_avatar.png'),
+(36, 'aml', 'mohamed', 18, 'aml_mohamed@yahoo.com', 'aml101', '12348', 'Madent Nasr', '011111', 0, 4, 'img_avatar2.png'),
+(38, 'mona', 'mohamed', 17, 'mona_mm@yahoo.com', 'mona12345', '123', 'Madent Nasr', '011111', 0, 5, 'img_avatar2.png'),
+(39, 'fady', 'mohamed', 21, 'fady@yahoo.com', 'fadyfady101', '123789', 'medant nasr', '011111', 1, 2, 'img_avatar.png'),
+(41, 'fady', 'mohamed', 21, 'fady@yahoo.com', 'fa101', '123789', 'medant nasr', '011111', 1, 3, 'img_avatar.png'),
+(42, 'fady', 'mohamed', 21, 'fady@yahoo.com', 'fadyfady1022', '123789', 'medant nasr', '011111', 1, 2, 'img_avatar.png'),
+(44, 'fady', 'ahmed', 21, 'fady@yahoo.com', 'fadyfady101', '123789', 'medant nasr', '0111122333', 1, 3, 'img_avatar.png');
 
 -- --------------------------------------------------------
 
@@ -297,6 +384,16 @@ CREATE TABLE `user-extra-details` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `user-extra-details`
+--
+
+INSERT INTO `user-extra-details` (`id`, `name`) VALUES
+(1, 'Guardian E-mail'),
+(2, 'Guardian Phone-number'),
+(3, 'Home-Address'),
+(4, 'Salary');
+
 -- --------------------------------------------------------
 
 --
@@ -307,6 +404,17 @@ CREATE TABLE `user-type` (
   `id` int(11) NOT NULL,
   `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user-type`
+--
+
+INSERT INTO `user-type` (`id`, `type`) VALUES
+(1, 'admin'),
+(2, 'back-disk'),
+(3, 'front-disk'),
+(4, 'teacher'),
+(5, 'student');
 
 -- --------------------------------------------------------
 
@@ -341,7 +449,7 @@ CREATE TABLE `word` (
 --
 ALTER TABLE `add-extra-value`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `Add-extra_fk0` (`usertype-id`),
+  ADD KEY `Add-extra_fk0` (`user-id`),
   ADD KEY `Add-extra_fk1` (`extradetails-id`);
 
 --
@@ -397,7 +505,6 @@ ALTER TABLE `group`
 ALTER TABLE `group-details`
   ADD PRIMARY KEY (`id`),
   ADD KEY `Group-details_fk0` (`course-id`),
-  ADD KEY `Group-details_fk1` (`calendar-id`),
   ADD KEY `Group-details_fk2` (`room-id`),
   ADD KEY `Group-details_fk3` (`teacher-id`);
 
@@ -511,7 +618,7 @@ ALTER TABLE `word`
 -- AUTO_INCREMENT for table `add-extra-value`
 --
 ALTER TABLE `add-extra-value`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `add-message`
 --
@@ -531,12 +638,12 @@ ALTER TABLE `calender`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `day`
 --
 ALTER TABLE `day`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `grades`
 --
@@ -576,7 +683,7 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `salary`
 --
@@ -601,7 +708,7 @@ ALTER TABLE `student-attendence`
 -- AUTO_INCREMENT for table `time`
 --
 ALTER TABLE `time`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `translate`
 --
@@ -611,17 +718,17 @@ ALTER TABLE `translate`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `user-extra-details`
 --
 ALTER TABLE `user-extra-details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `user-type`
 --
 ALTER TABLE `user-type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `user-type-pages`
 --
@@ -640,7 +747,6 @@ ALTER TABLE `word`
 -- Constraints for table `add-extra-value`
 --
 ALTER TABLE `add-extra-value`
-  ADD CONSTRAINT `Add-extra_fk0` FOREIGN KEY (`usertype-id`) REFERENCES `user-type` (`id`),
   ADD CONSTRAINT `Add-extra_fk1` FOREIGN KEY (`extradetails-id`) REFERENCES `user-extra-details` (`id`);
 
 --

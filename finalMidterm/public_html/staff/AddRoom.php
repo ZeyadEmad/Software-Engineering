@@ -4,7 +4,7 @@ require_once 'functions.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home </title>
+	<title>New Room </title>
 <style>
 #a{
 	text-align: left;

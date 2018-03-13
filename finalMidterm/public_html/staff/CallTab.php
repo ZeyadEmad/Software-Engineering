@@ -4,58 +4,71 @@ require_once '../constant/Css-filesold.php';
 ?>
 <!DOCTYPE html>
 <html>
-    <head>  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"></head>
+<head>  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"></head>
 <body>
 <!--Back Disk-->
 
-<!--Add-new-user-->
+<!--Add-new-Staff-->
 <div class="container" style="padding-right: 10%" >
     <div id="Add-new-user" class="tabcontent" >
         <h3> Enter New User:</h3>
-        <form method="post" action="" class="form1">
+        <form method="post" action="../staff/functions.php" class="form1">
                 <div class="leftgroup">
                     <div class="form-group">
                         <p class="p1" >First Name</p>
                         <span class="icon"><i class="fa fa-male"></i></span>
                         <input  class="input1" type="text" name="fname">
-                   </div>
-                   <div class="form-group">
+                    </div>
+                    <div class="form-group">
                         <p class="p1">Last Name</p>
                         <span class="icon"><i class="fa fa-male"></i></span>
                         <input class="input1" type="text" name="lname">
-                   </div>
-                   <div class="form-group">
-                        <p class="p1">E-mail</p>
-                        <span class="icon"><i class="fa fa-envelope-o"></i></span>
-                        <input class="input1" type="email" name="mail">
-                   </div>
-                   <div class="form-group">
-                        <p class="p1">Home Address</p>
-                        <span class="icon"><i class="fa fa-home"></i></span>
-                        <input class="input1" type="text" name="address">
-                   </div>
-                   <div class="form-group">
-                        <p class="p1">City</p>
-                        <span class="icon"><i class="fa fa-building-o"></i></span>
-                        <input class="input1" type="text" name="city">
-                   </div>
+                    </div>
+                    <div class="form-group">
+                    <p class="p1">Age</p>
+                    <span class="icon"><i class="fa fa-building-o"></i></span>
+                    <input class="input1" type="text" name="age">
+                    </div>
+                    <div class="form-group">
+                         <p class="p1">E-mail</p>
+                         <span class="icon"><i class="fa fa-envelope-o"></i></span>
+                         <input class="input1" type="email" name="Email">
+                    </div>
+                    <div class="form-group">
+                         <p class="p1">Home Address</p>
+                         <span class="icon"><i class="fa fa-home"></i></span>
+                         <input class="input1" type="text" name="HAddress">
+                    </div>
+                    <div class="form-group">
+                         <p class="p1">City</p>
+                         <span class="icon"><i class="fa fa-building-o"></i></span>
+                         <input class="input1" type="text" name="city">
+                    </div>
+                    <div class="form-group">
+                        <p class="p1">Gender</p>
+                        <span class="icon"><i class="fa fa-info"></i></span>
+                        <select name="glist" class="select1" class="form-control selectpicker">
+                          <optgroup label="Gender" name="glist" >
+                            <option id="glist" value="1">Male</option>
+                            <option id="glist" value="0" >Female</option>
+                          </optgroup>
+                        </select>
+                    </div>
                 </div>
                 <div class="rightgroup">
                     <div class="form-group">
                         <p class="p1">Phone number</p>
                         <span class="icon"><i class="fa fa-phone"></i></span>
-                        <input class="input1" type="text" name="number">
+                        <input class="input1" type="text" name="Pnumber">
                     </div>
                     <div class="form-group">
                         <p class="p1">Job Role</p>
                         <span class="icon"><i class="fa fa-info"></i></span>
                         <select name="jobrole" class="select1" class="form-control selectpicker">
-                          <optgroup label="Please select the job role" id="list">
-                            <option >Lawyer</option>
-                            <option >Professor</option>
-                            <option >Doctor</option>
-                            <option >Engineer</option>
-                            <option >Driver</option>
+                          <optgroup label="Please select the job role" id="jobrole">
+                            <option id="jobrole" value="2">Back-disk</option>
+                            <option id="jobrole" value="3">Front-disk</option>
+                            <option id="jobrole" value="4">Teacher</option>
                           </optgroup>
                         </select>
                     </div>
@@ -65,16 +78,23 @@ require_once '../constant/Css-filesold.php';
                         <input class="input1" type="text" name="salary">
                     </div>
                     <div class="form-group">
+                    <p class="p1">Username</p>
+                    <span class="icon"><i ></i></span>
+                    <input type="text" name="uname" class="input1">
+                    </div>
+                    <div class="form-group">
                         <p class="p1">Password</p>
                         <span class="icon"><i class="fa fa-building-o"></i></span>
                         <input class="input1" type="password" name="pass" />
                     </div>
-                </div>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary create-profile" type="submit">Create profile</button>
+                
+                    Choose the picture <br><br>
+                    <input type="file" name="pic" accept="image/*">
+                </div>    
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary create-profile" name="AddStaff" type="submit">Create profile</button>
         </form>
     </div>
 </div>
-
 <!--Add-new-group-->
 <div class="container" style="padding-right: 10%" >
     <div id="Add-new-group" class="tabcontent">
@@ -225,12 +245,14 @@ require_once '../constant/Css-filesold.php';
 <div class="container" style="padding-right: 10%" >
     <div id="View-group" class="tabcontent">
       <h3>All Courses</h3>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary bf1" id="bf1" onclick="parent.location='ViewCou.php'">Eng101</button>
+      <!--<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary bf1" id="bf1" onclick="parent.location='ViewCou.php'">Eng101</button>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary bf1" id="bf1" onclick="parent.location='ViewCou.php'">Eng102</button>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary bf1" id="bf1" onclick="parent.location='ViewCou.php'">Math101</button>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary bf1" id="bf1" onclick="parent.location='ViewCou.php'">Arb101</button>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary bf1" id="bf1" onclick="parent.location='ViewCou.php'">Abr102</button>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary bf1" id="bf1" onclick="parent.location='ViewCou.php'">Ph101</button>
+      -->
+      <?php echo selectCourse2();?>
       <br><br>
     </div>
 </div>
@@ -247,11 +269,11 @@ require_once '../constant/Css-filesold.php';
 <div class="container" style="padding-right: 10%" >
     <div id="Staff" class="tabcontent">
         <h3>View Staff</h3>
-        <input class="mdl-textfield__input " type="text"  name="search" placeholder="Search"><br>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" >Search for Students</button>
+        <input class="mdl-textfield__input " type="text"  id="myInput1" onkeyup="mysearchStaff()" name="search" placeholder="Search"><br>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" >Search for Staff</button>
         <br><br>
         <div class="vertical-menu">
-        <table class="mdl-data-table mdl-js-data-table">
+        <table class="mdl-data-table mdl-js-data-table" id="myTable1">
             <thead>
                 <tr>
                     <th class="mdl-data-table__cell--non-numeric">Photo</th>
@@ -259,8 +281,9 @@ require_once '../constant/Css-filesold.php';
                     <th class="mdl-data-table__cell--non-numeric">Edit</th>
                     <th class="mdl-data-table__cell--non-numeric">Attendance</th>
                     <th class="mdl-data-table__cell--non-numeric">Salary</th>
+                    <th class="mdl-data-table__cell--non-numeric">Delete</th>
                 </tr>
-            </thead>
+            <!--</thead>
             <tbody>
                 <tr>
                   <td class="mdl-data-table__cell--non-numeric"><img src="../img/img_avatar.png" alt="Avatar"></td>
@@ -283,7 +306,38 @@ require_once '../constant/Css-filesold.php';
                   <td> <button class="button3" id="bb" onclick="parent.location='EmployeeAtt.php'">Attendance</button></td>
                   <td> <button class="button3" id="bb" onclick="parent.location='EmployeeBills.php'">Salary</button></td>
                 </tr>
-                </tbody>
+                </tbody>-->
+            <tbody>
+                <?php
+                require_once  "database.php";
+                $data = new data();
+                $conn = $data->con();
+                $sql = "SELECT * FROM `user` WHERE `type-id`<>'5' ";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) 
+                    {
+                        while($row = $result->fetch_assoc()) 
+                            {
+                                echo'<tr>
+                                   <td class="mdl-data-table__cell--non-numeric"><img src="../img/img_avatar.png" alt="Avatar"></td>
+                                   <td class="mdl-data-table__cell--non-numeric">'. $row["First-name"]. ' ' . $row["last-name"].'</td>';
+                                echo'
+                                   <td> <button class="button3" id="bb" ><a href="AddNewWorker.php?id='.$row["id"].'">Edit Details</a></button></td>
+                                   <td> <button class="button3" id="bb" ><a href="EmployeeAtt.php?id='.$row["id"].'">Attendance</a></button></td>
+                                   <td> <button class="button3" id="bb" ><a href="EmployeeBills.php?id='.$row["id"].'">Salary</a></button></td>
+                                   <td> <button class="button3" id="bb" ><a href="IsDeleted.php?id='.$row["id"].'">Delete</a></button></td>
+                                   </tr>';
+
+                                     //    echo "id: " . $row["id"]. " - Name: " . $row["First-name"]. " " . $row["last-name"]. "<br>";
+                            }
+                       } 
+                  else 
+                      {
+                        echo "0 results";
+                      }
+                $conn->close(); 
+                ?>
+              </tbody>
         </table>  
         <br><br>
         </div>
@@ -303,6 +357,7 @@ require_once '../constant/Css-filesold.php';
             <br><br><br>
     </div>
 </div>
+
 
 <!--View-requests-->
 <div class="container" style="padding-right: 10%" >
@@ -413,16 +468,17 @@ require_once '../constant/Css-filesold.php';
                 </div>
             </div>
             <br><br>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary create-profile" type="submit">Add new Student</button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary create-profile" type="submit" name="Addnewstudent1">Add new Student</button>
             <br><br><br><br>
         </form>
     </div>
 </div>
 
 <!--Students-->
-<div id="Students" class="tabcontent" style="padding-right: 10%; height: 600px;" >
+<div id="Students" class="tabcontent" style="padding-right: 10%; height: 700px;" >
+     <h3>View Student</h3>
     <div>
-        <br><br>
+       <!-- <br><br>
         <div class="vertical-menu" style="height: 550px;">
         <input class="mdl-textfield__input " type="text"  name="search" placeholder="Search"><br>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" >Search for Students</button>
@@ -480,7 +536,59 @@ require_once '../constant/Css-filesold.php';
               </tbody>
             </table> 
         </div>
+        <br><br>-->
+        <input class="mdl-textfield__input " id="myInput" onkeyup="mysearchStudent()" type="text"  name="search" placeholder="Search"><br>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" >Search for Students</button>
         <br><br>
+        <div class="vertical-menu" style="height: 480px;">
+            <table class="mdl-data-table mdl-js-data-table" id="myTable">
+              <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric" >Photo</th>
+                    <th class="mdl-data-table__cell--non-numeric">User</th>
+                    <th class="mdl-data-table__cell--non-numeric">Course</th>
+                    <th class="mdl-data-table__cell--non-numeric">Grades</th>
+                    <th class="mdl-data-table__cell--non-numeric">Edit</th>
+                    <th class="mdl-data-table__cell--non-numeric">Delete</th>
+                    <th class="mdl-data-table__cell--non-numeric">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                require_once  "database.php";
+                $data = new data();
+                $conn = $data->con();
+                $sql = "SELECT * FROM `user` WHERE `type-id`='5' ";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) 
+                    {
+                        while($row = $result->fetch_assoc()) 
+                            {
+                                echo'<tr>
+                                   <td class="mdl-data-table__cell--non-numeric"><img src="../img/img_avatar.png" alt="Avatar"></td>
+                                   <td class="mdl-data-table__cell--non-numeric">'. $row["First-name"]. ' ' . $row["last-name"].'</td>';
+                                echo'
+                                   <td> <button class="button3" id="bb" ><a href="addcourse.php?id='.$row["id"].'">Add Course</a></button></td>
+                                   <td> <button class="button3" id="bb" ><a href="puttinggrades.phpid='.$row["id"].'">Grades</a></button></td>
+                                   <td> <button class="button3" id="bb" ><a href="Editstudent2.php?id='.$row["id"].'">Edit Details</a></button></td>
+                                    <td> <button class="button3" id="bb" ><a href="IsDeleted2.php?id='.$row["id"].'">Delete</a></button></td>
+                                   <td> <button class="button3" id="bb" ><a href="amount.php?id='.$row["id"].'">View Amount</a></button></td>
+                                    </tr>';
+
+                                     //    echo "id: " . $row["id"]. " - Name: " . $row["First-name"]. " " . $row["last-name"]. "<br>";
+                            }
+                       } 
+                  else 
+                      {
+                        echo "0 results";
+                      }
+                $conn->close(); 
+                ?>
+              </tbody>
+            </table>  
+        </div>
+        <br><br>
+        
     </div>
 </div>
  
@@ -623,115 +731,127 @@ require_once '../constant/Css-filesold.php';
 <div class="container" style="padding-right: 10%" >
 <div id="Edit-course" class="tabcontent">
     <div>
-    <h2> Enter New Course Information:</h2>
-    <form  name="form_name" action="" method ="post" class="from-horizontal" >
-        Course Code:<br>
-        <input type="text" id="name" name="name"  >
-        <br>
-        Subject Name:<br>
-        <input type="text" id="name" name="name"  >
-        <br>
-        Course Teacher:<br>
-        <input type="text" id="name" name="name"  >
-        <br>
-        Room:<br>
-        <div id="buttons_panel">
-            <?php echo getButtons();?>
-        </div>
-        <br>
-        Select Weekdays & Time:<br>
-        <div>
-            <div class="dropdown">
-                <div class="dropbtn" id="sat">Saturday</div>
-                <div class="dropdown-content">
-                      <input type="radio" name="term1" id="0" >09:00AM - 11:00AM</input><br>
-                      <input type="radio" name="term1" id="1" >11:00AM - 01:00PM</input><br>
-                      <input type="radio" name="term1" id="2" >01:00PM - 03:00PM</input><br>
-                      <input type="radio" name="term1" id="3" >03:00PM - 05:00PM</input><br>
-                      <input type="radio" name="term1" id="4" >05:00PM - 07:00PM</input><br>
-                      <input type="radio" name="term1" id="5" >07:00PM - 09:00PM</input><br>
-                      <input type="radio" name="term1" id="6" >09:00PM - 11:00PM</input><br>
+    <h3> Enter New Group Information:</h3>
+        <form  name="form_name" action="" method ="post" class="from-horizontal" >
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="GroupCode" id="GroupCode" >
+            <label class="mdl-textfield__label" for="name">Group Code</label>
+            </div><br>
+            <div  id="buttons_panel">
+            <p> Select Course</p> <?php echo selectCourse();?>
+            </div>
+            <div id="buttons_panel">
+            <p> Select Teacher</p> <?php echo selectTeacher();?>
+            </div>
+            <div id="buttons_panel">
+               <p> Select Room</p> 
+               <br>   
+                <?php echo getButtons();?>
+            </div>
+            <br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="month">
+            <label class="mdl-textfield__label" for="name">Month </label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="year">
+            <label class="mdl-textfield__label" for="name">Year </label>
+            </div><br>
+            <p>Select Weekdays & Time:</p><br>
+            <div>
+                <div class="dropdown">
+                          <div class="dropbtn" id="sat">Saturday</div>
+                          <div class="dropdown-content">
+                                <input type="radio" name="term1" id="0" >09:00AM - 11:00AM</input><br>
+                                <input type="radio" name="term1" id="1" >11:00AM - 01:00PM</input><br>
+                                <input type="radio" name="term1" id="2" >01:00PM - 03:00PM</input><br>
+                                <input type="radio" name="term1" id="3" >03:00PM - 05:00PM</input><br>
+                                <input type="radio" name="term1" id="4" >05:00PM - 07:00PM</input><br>
+                                <input type="radio" name="term1" id="5" >07:00PM - 09:00PM</input><br>
+                                <input type="radio" name="term1" id="6" >09:00PM - 11:00PM</input><br>
+                          </div>
+                </div>
+                <div class="dropdown">
+                          <div class="dropbtn">Sunday</div>
+                          <div class="dropdown-content">
+                                <input type="radio" name="term2" id="0" >09:00AM - 11:00AM</input><br>
+                                <input type="radio" name="term2" id="1" >11:00AM - 01:00PM</input><br>
+                                <input type="radio" name="term2" id="2" >01:00PM - 03:00PM</input><br>
+                                <input type="radio" name="term2" id="3" >03:00PM - 05:00PM</input><br>
+                                <input type="radio" name="term2" id="4" >05:00PM - 07:00PM</input><br>
+                                <input type="radio" name="term2" id="5" >07:00PM - 09:00PM</input><br>
+                                <input type="radio" name="term2" id="6" >09:00PM - 11:00PM</input><br>
+                          </div>
+                </div>
+                <div class="dropdown">
+                          <div class="dropbtn">Monday</div>
+                          <div class="dropdown-content">
+                                <input type="radio" name="term3" id="0" >09:00AM - 11:00AM</input><br>
+                                <input type="radio" name="term3" id="1" >11:00AM - 01:00PM</input><br>
+                                <input type="radio" name="term3" id="2" >01:00PM - 03:00PM</input><br>
+                                <input type="radio" name="term3" id="3" >03:00PM - 05:00PM</input><br>
+                                <input type="radio" name="term3" id="4" >05:00PM - 07:00PM</input><br>
+                                <input type="radio" name="term3" id="5" >07:00PM - 09:00PM</input><br>
+                                <input type="radio" name="term3" id="6" >09:00PM - 11:00PM</input><br>
+                          </div>
+                </div>
+                <div class="dropdown">
+                          <div class="dropbtn">Tuesday</div>
+                          <div class="dropdown-content">
+                                <input type="radio" name="term4" id="0" >09:00AM - 11:00AM</input><br>
+                                <input type="radio" name="term4" id="1" >11:00AM - 01:00PM</input><br>
+                                <input type="radio" name="term4" id="2" >01:00PM - 03:00PM</input><br>
+                                <input type="radio" name="term4" id="3" >03:00PM - 05:00PM</input><br>
+                                <input type="radio" name="term4" id="4" >05:00PM - 07:00PM</input><br>
+                                <input type="radio" name="term4" id="5" >07:00PM - 09:00PM</input><br>
+                                <input type="radio" name="term4" id="6" >09:00PM - 11:00PM</input><br>
+                          </div>
+                </div>
+                <div class="dropdown">
+                          <div class="dropbtn">Wednesday</div>
+                          <div class="dropdown-content">
+                                <input type="radio" name="term5" id="0" >09:00AM - 11:00AM</input><br>
+                                <input type="radio" name="term5" id="1" >11:00AM - 01:00PM</input><br>
+                                <input type="radio" name="term5" id="2" >01:00PM - 03:00PM</input><br>
+                                <input type="radio" name="term5" id="3" >03:00PM - 05:00PM</input><br>
+                                <input type="radio" name="term5" id="4" >05:00PM - 07:00PM</input><br>
+                                <input type="radio" name="term5" id="5" >07:00PM - 09:00PM</input><br>
+                                <input type="radio" name="term5" id="6" >09:00PM - 11:00PM</input><br>
+                          </div>
+                </div>
+                <div class="dropdown">
+                          <div class="dropbtn">Thursday</div>
+                          <div class="dropdown-content">
+                                <input type="radio" name="term6" id="0" >09:00AM - 11:00AM</input><br>
+                                <input type="radio" name="term6" id="1" >11:00AM - 01:00PM</input><br>
+                                <input type="radio" name="term6" id="2" >01:00PM - 03:00PM</input><br>
+                                <input type="radio" name="term6" id="3" >03:00PM - 05:00PM</input><br>
+                                <input type="radio" name="term6" id="4" >05:00PM - 07:00PM</input><br>
+                                <input type="radio" name="term6" id="5" >07:00PM - 09:00PM</input><br>
+                                <input type="radio" name="term6" id="6" >09:00PM - 11:00PM</input><br>
+                          </div>
+                </div>
+                <div class="dropdown">
+                          <div class="dropbtn">Friday</div>
+                          <div class="dropdown-content">
+                                <input type="radio" name="term7" id="0" >09:00AM - 11:00AM</input><br>
+                                <input type="radio" name="term7" id="1" >11:00AM - 01:00PM</input><br>
+                                <input type="radio" name="term7" id="2" >01:00PM - 03:00PM</input><br>
+                                <input type="radio" name="term7" id="3" >03:00PM - 05:00PM</input><br>
+                                <input type="radio" name="term7" id="4" >05:00PM - 07:00PM</input><br>
+                                <input type="radio" name="term7" id="5" >07:00PM - 09:00PM</input><br>
+                                <input type="radio" name="term7" id="6" >09:00PM - 11:00PM</input><br>
+                          </div>
                 </div>
             </div>
-            <div class="dropdown">
-                <div class="dropbtn">Sunday</div>
-                <div class="dropdown-content">
-                      <input type="radio" name="term2" id="0" >09:00AM - 11:00AM</input><br>
-                      <input type="radio" name="term2" id="1" >11:00AM - 01:00PM</input><br>
-                      <input type="radio" name="term2" id="2" >01:00PM - 03:00PM</input><br>
-                      <input type="radio" name="term2" id="3" >03:00PM - 05:00PM</input><br>
-                      <input type="radio" name="term2" id="4" >05:00PM - 07:00PM</input><br>
-                      <input type="radio" name="term2" id="5" >07:00PM - 09:00PM</input><br>
-                      <input type="radio" name="term2" id="6" >09:00PM - 11:00PM</input><br>
-                </div>
-                </div>
-                <div class="dropdown">
-                    <div class="dropbtn">Monday</div>
-                    <div class="dropdown-content">
-                          <input type="radio" name="term3" id="0" >09:00AM - 11:00AM</input><br>
-                          <input type="radio" name="term3" id="1" >11:00AM - 01:00PM</input><br>
-                          <input type="radio" name="term3" id="2" >01:00PM - 03:00PM</input><br>
-                          <input type="radio" name="term3" id="3" >03:00PM - 05:00PM</input><br>
-                          <input type="radio" name="term3" id="4" >05:00PM - 07:00PM</input><br>
-                          <input type="radio" name="term3" id="5" >07:00PM - 09:00PM</input><br>
-                          <input type="radio" name="term3" id="6" >09:00PM - 11:00PM</input><br>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <div class="dropbtn">Tuesday</div>
-                    <div class="dropdown-content">
-                          <input type="radio" name="term4" id="0" >09:00AM - 11:00AM</input><br>
-                          <input type="radio" name="term4" id="1" >11:00AM - 01:00PM</input><br>
-                          <input type="radio" name="term4" id="2" >01:00PM - 03:00PM</input><br>
-                          <input type="radio" name="term4" id="3" >03:00PM - 05:00PM</input><br>
-                          <input type="radio" name="term4" id="4" >05:00PM - 07:00PM</input><br>
-                          <input type="radio" name="term4" id="5" >07:00PM - 09:00PM</input><br>
-                          <input type="radio" name="term4" id="6" >09:00PM - 11:00PM</input><br>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <div class="dropbtn">Wednesday</div>
-                    <div class="dropdown-content">
-                          <input type="radio" name="term5" id="0" >09:00AM - 11:00AM</input><br>
-                          <input type="radio" name="term5" id="1" >11:00AM - 01:00PM</input><br>
-                          <input type="radio" name="term5" id="2" >01:00PM - 03:00PM</input><br>
-                          <input type="radio" name="term5" id="3" >03:00PM - 05:00PM</input><br>
-                          <input type="radio" name="term5" id="4" >05:00PM - 07:00PM</input><br>
-                          <input type="radio" name="term5" id="5" >07:00PM - 09:00PM</input><br>
-                          <input type="radio" name="term5" id="6" >09:00PM - 11:00PM</input><br>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <div class="dropbtn">Thursday</div>
-                    <div class="dropdown-content">
-                          <input type="radio" name="term6" id="0" >09:00AM - 11:00AM</input><br>
-                          <input type="radio" name="term6" id="1" >11:00AM - 01:00PM</input><br>
-                          <input type="radio" name="term6" id="2" >01:00PM - 03:00PM</input><br>
-                          <input type="radio" name="term6" id="3" >03:00PM - 05:00PM</input><br>
-                          <input type="radio" name="term6" id="4" >05:00PM - 07:00PM</input><br>
-                          <input type="radio" name="term6" id="5" >07:00PM - 09:00PM</input><br>
-                          <input type="radio" name="term6" id="6" >09:00PM - 11:00PM</input><br>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <div class="dropbtn">Friday</div>
-                    <div class="dropdown-content">
-                          <input type="radio" name="term7" id="0" >09:00AM - 11:00AM</input><br>
-                          <input type="radio" name="term7" id="1" >11:00AM - 01:00PM</input><br>
-                          <input type="radio" name="term7" id="2" >01:00PM - 03:00PM</input><br>
-                          <input type="radio" name="term7" id="3" >03:00PM - 05:00PM</input><br>
-                          <input type="radio" name="term7" id="4" >05:00PM - 07:00PM</input><br>
-                          <input type="radio" name="term7" id="5" >07:00PM - 09:00PM</input><br>
-                          <input type="radio" name="term7" id="6" >09:00PM - 11:00PM</input><br>
-                    </div>
-                </div>
-        </div>
-        <br>
-        Course Color:<br>
-        <input type="color" class="co1"  name="favcolor" value="#ff0000">
-        <br><br>
-        <input type="submit" class="b1" value="Submit" >
-    </form>
+            <br><br>
+            Course Color:<br>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input co1" type="color" name="color" id="favcolor" value="#4286f4">
+            </div>
+            <br><br>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary b1" type="submit" name="submitGroup">Submit</button>
+        </form>
     </div>
 </div>
 </div>
@@ -792,7 +912,7 @@ require_once '../constant/Css-filesold.php';
 <div class="container" style="padding-right: 10%" >
 <div id="Attendence1" class="tabcontent">
     <div>
-        <h2> Today Attendence<br> </h2>
+        <h2> Today Attendance<br> </h2>
         <div class="vertical-menu">
             <div>
                 <table cellpadding="2" cellspacing="0">
@@ -853,7 +973,7 @@ require_once '../constant/Css-filesold.php';
                     </tbody>
                 </table>
             </div>  
-            <button type="Submit" style="text-align: center;height:100px; width: 100px; Background-color:#ffcccc; position:static;"> Submit </button>
+            <button type="Submit" style="text-align: center;height:100px; width: 100px; color:#ffcccc; position:static;"> Submit </button>
         </div> 
     </div> 
 </div>
@@ -912,7 +1032,6 @@ require_once '../constant/Css-filesold.php';
 <!--Teacher-->
 
 <!--Schedule-->
-
 <div class="container" style="padding-right: 10%" >
     <div id="Schedule" class="tabcontent" style="padding-right: 20%;padding-bottom: 5%;"  >
         <div>
@@ -1008,7 +1127,6 @@ require_once '../constant/Css-filesold.php';
         </div>
     </div>
 </div>
-
 
 <!--details-->
 <div class="container" style="padding-right: 10%" >
@@ -1137,4 +1255,55 @@ require_once '../constant/Css-filesold.php';
 </div>
 
 </body>
+
+<script>
+    function mysearchStudent() 
+    {
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) 
+      {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) 
+        {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) 
+          {
+            tr[i].style.display = "";
+          } 
+          else 
+          {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    } 
+    function mysearchStaff() 
+    {
+      var input, filter, table, tr, td, i;
+      input = document.getElementById("myInput1");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable1");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) 
+      {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) 
+        {
+          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) 
+          {
+            tr[i].style.display = "";
+          } 
+          else 
+          {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    } 
+</script>
+   
+   
 </html>

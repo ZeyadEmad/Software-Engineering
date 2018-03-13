@@ -76,12 +76,12 @@
                     <p>Guardian Phone number</p>
                     <span class="icon"><i class="fa fa-phone"></i></span>
                     <input type="text" name="gnumber">
-                </div>
+                    </div>
                     
                 </div>
                 Choose the picture <br><br>
                 <input type="file" name="pic" accept="image/*">
-            </div>
+                </div>
            
         </div>
             

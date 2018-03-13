@@ -2,6 +2,8 @@
 require_once 'database.php';
 require_once 'Css-files.php';
 
+
+####get-room####
 function getButtons()
 {
 		$data = new data();
@@ -34,7 +36,7 @@ function getButtons()
 }
 	
 
-
+####get-room1####
 function getButtons1()
 {
 	$data = new data();
@@ -136,6 +138,7 @@ function selectTeacher()
         $conn->close();
 }
 
+
 ####Add-new-student####
 function Addnewstudent()
 {
@@ -187,10 +190,71 @@ function Addnewstudent()
         $conn->close(); 
 }
 
+
 if(isset($_POST['Addnewstudent']))
 {
    Addnewstudent();
 } 
+
+
+####Add-new-student####
+function Addnewstudent1()
+{
+	$data = new data();
+	$conn = $data->con();
+        if($_POST){
+            $dfname =$_POST["fname"];
+            $dlname = $_POST['lname'];
+            $dmail = $_POST['mail'];
+            $daddress = $_POST['address'];
+            $dage = $_POST['age'];
+            $dnumber = $_POST['pnumber'];
+            $dgender = $_POST['glist'];
+            $dusername = $_POST['username'];
+            $dpassword = $_POST['password'];
+            $dpemail = $_POST['gumail'];
+            $dgnumber = $_POST['gnumber'];
+            $dpic = $_POST['pic'];
+            $usertype = 1;
+
+            $TableName = 'user';
+             $sql = "INSERT INTO `user` (`id`,`First-name`, `last-name`, `age`, `email`,`username`, `password`, `address`, `telephone`,`gender`,`type-id`,`Pic`) VALUES (NULL ,'$dfname', '$dlname', '$dage', '$dmail','$dusername','$dpassword', '$daddress', '$dnumber','$dgender','5','$dpic')";
+             $MAX = "SELECT MAX(ID) FROM  user";
+             $last_id = $conn->insert_id;
+             $sql1 = "INSERT INTO `add-extra-value` (`id`,`user-id`, `extradetails-id`, `value`) VALUES (NULL ,'$last_id', '1', '$dpemail')";
+             $sql2 = "INSERT INTO `add-extra-value` (`id`,`user-id`, `extradetails-id`, `value`) VALUES (NULL ,'$last_id' , '2', '$dgnumber')";
+
+
+             if ($conn->query($sql) === TRUE) 
+                 {  
+                    $last_id = $conn->insert_id;
+                    $sql1 = "INSERT INTO `add-extra-value` (`id`,`user-id`, `extradetails-id`, `value`) VALUES (NULL ,'$last_id', '1', '$dpemail')";
+                    $sql2 = "INSERT INTO `add-extra-value` (`id`,`user-id`, `extradetails-id`, `value`) VALUES (NULL ,'$last_id' , '2', '$dgnumber')";
+                    echo "New record created successfully. Last inserted ID is: " . $last_id;
+
+                    if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE  ) 
+                    {
+
+                        echo "<script> alert('Welcome your account created successfully');  </script>";
+                        header("Location:../staff/frontdiskhome.php");
+                    }
+                 } 
+             else 
+                 {
+                     echo "Error: " . $sql . "<br>" . $conn->error;
+                 }
+         
+        }
+        $conn->close(); 
+}
+
+
+if(isset($_POST['Addnewstudent1']))
+{
+   Addnewstudent1();
+} 
+
+
 ####submit-Course####
 function subCourse()
 {
@@ -204,7 +268,7 @@ function subCourse()
         if ($conn->query($sql1) === TRUE) 
         {
 
-            echo "<script> alert('Your course created successfully');  </script>";
+            echo "<script> alert('New course created successfully');  </script>";
             header("Location:../staff/BackDisk.php");
         }     
          else 
@@ -218,15 +282,19 @@ function subCourse()
     echo $_POST["$Colevel"];
 }
 
+
 if(isset($_POST['submitCourse']))
 {
    subCourse();
 } 
+
+
 ####submit-Group####
 if(isset($_POST['submitGroup']))
 {
    subGroup();
 } 
+
 
 function subGroup()
 {
@@ -257,11 +325,13 @@ function subGroup()
         $conn->close();
 }
 
+
 ####Student Login####
 if(isset($_POST['studentlog']))
 {
    studentlog();
 } 
+
 
 function studentlog()
 {
@@ -281,7 +351,15 @@ function studentlog()
 	if($row=mysqli_fetch_array($Result))
         {	
             $_SESSION["id"] =$row["id"];
-            header("Location:../student/student.php");
+            if($row["type-id"]=="5") 
+            {header("Location:../student/student.php");}
+            if($row["type-id"]=="4") 
+            {header("Location:../staff/Teacherhomepage.php");}
+            if($row["type-id"]=="3") 
+            {header("Location:../staff/frontdiskhome.php");}
+            if($row["type-id"]=="2") 
+            {header("Location:../staff/BackDisk.php");}
+            
         }
 	else echo "Not found"; 
                     
@@ -294,6 +372,7 @@ function studentlog()
     }
         $conn->close();
 }
+
 
 ####Student Add course####
 function studentAddcourse()
@@ -327,6 +406,88 @@ function studentAddcourse()
         $conn->close();
     
 }
+
+
+####Add-new-Staff####
+function AddStaff()
+{
+	$data = new data();
+	$conn = $data->con();
+        if($_POST){
+            $dfname =$_POST["fname"];
+            $dlname = $_POST['lname'];
+            $dmail = $_POST['Email'];
+            $daddress = $_POST['city'];
+            $dage = $_POST['age'];
+            $dnumber = $_POST['Pnumber'];
+            $dgender = $_POST['glist'];
+            $dusername = $_POST['uname'];
+            $dpassword = $_POST['pass'];
+            $dpic = $_POST['pic'];
+            $usertype = $_POST['jobrole'];
+            $dCity = $_POST['HAddress'];
+            $dSalary = $_POST['salary'];
+             $sql = "INSERT INTO `user` (`id`,`First-name`, `last-name`, `age`, `email`,`username`, `password`, `address`, `telephone`,`gender`,`type-id`,`Pic`) VALUES (NULL ,'$dfname', '$dlname', '$dage', '$dmail','$dusername','$dpassword', '$daddress', '$dnumber','$dgender',$usertype,'$dpic')";
+             #$MAX = "SELECT MAX(ID) FROM  user";
+             #$last_id = $conn->insert_id;
+             #$sql1 = "INSERT INTO `add-extra-value` (`id`,`user-id`, `extradetails-id`, `value`) VALUES (NULL ,'$last_id', '1', '$dpemail')";
+             #$sql2 = "INSERT INTO `add-extra-value` (`id`,`user-id`, `extradetails-id`, `value`) VALUES (NULL ,'$last_id' , '2', '$dgnumber')";
+
+             if ($conn->query($sql) === TRUE) 
+                 {  
+                    $last_id = $conn->insert_id;
+                    $sql1 = "INSERT INTO `add-extra-value` (`id`,`user-id`, `extradetails-id`, `value`) VALUES (NULL ,'$last_id', '3', '$dCity')";
+                    $sql2 = "INSERT INTO `add-extra-value` (`id`,`user-id`, `extradetails-id`, `value`) VALUES (NULL ,'$last_id' , '2', '$dSalary')";
+                    if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE  ) 
+                    {
+                        header("Location:../staff/BackDisk.php");
+                        echo "<script> alert('your account created successfully');  </script>";
+                        
+                    }
+                 } 
+             else 
+                 {
+                     echo "Error: " . $sql . "<br>" . $conn->error;
+                 }
+         
+        }
+        $conn->close(); 
+}
+
+
+if(isset($_POST['AddStaff']))
+{
+   AddStaff();
+} 
+
+
+####select-Course####
+function selectCourse2()
+{
+    $data = new data();
+	$conn = $data->con();
+	$sql = "SELECT `id`, `course-name` FROM `courses`  ";
+	$result = $conn->query($sql);
+  
+        $str='';
+        if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) 
+                            {
+                                $Cid = $row['id'];
+                                $fname= $row['course-name'];
+                                $str.='&nbsp;<input type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary bf1" id="bf1"  value="'.$fname.'"  name="'.$Cid.'"></input>';
+                                
+                                
+                            }
+                    }
+      
+        return $str;
+        $conn->close();
+}
+
+
+
+
 ?>
 
 <script>
