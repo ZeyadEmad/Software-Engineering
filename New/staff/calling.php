@@ -8,7 +8,7 @@ include 'edit&delete.php';
 //$x = $db->getData12("alaa20@gmail.com","user");
 //print_r($x);
 
-$db->update("user","mohamed123@gmail.com",3);
+$db->update("user","john@gmail.com",3);
 
 
 ?>

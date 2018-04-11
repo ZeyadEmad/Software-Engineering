@@ -13,7 +13,7 @@
 			  $this->servername = "localhost";
 			  $this->username = "root";
 			  $this->password = "";
-			  $this->db = "lab01";
+			  $this->db = "try1";
 			  $this->con = $this->connect();
 		  
 		
@@ -38,9 +38,9 @@
 				return $this->close();
 			}
    
-     public function getData12($Email,$table)
+     public function getData12($email,$table)
     {        
-	     $query = "SELECT * FROM $table WHERE Email = '$Email'";
+	     $query = "SELECT * FROM $table WHERE email = '$email'";
         $result = $this->con->query($query);
         
         if ($result == false) {
@@ -56,9 +56,9 @@
         return $rows;
     }
 	 
-	public function update($table,$Email,$id)
+	public function update($table,$email,$id)
 	    {
-		$string = "UPDATE ".$table." SET Email ='$Email' WHERE id=$id";
+		$string = "UPDATE ".$table." SET email ='$email' WHERE id=$id";
 		$result = $this->con->query($string);
 
 		if($result != false)

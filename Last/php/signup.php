@@ -1,3 +1,52 @@
+<?php
+//session_start();
+              $servername = "localhost";
+			  $username = "root";
+			  $password = "";
+			  $db = "try1";
+			 
+		      $emailError =" ";
+		
+		  
+		$con  = new mysqli($servername,$username,$password,$db);echo "hi";
+               if($con->connect_error)	
+                {
+					die("failed to connect :".$con->connect_error);
+			    }				   
+		      
+		 
+		    function disconnect()
+			
+			{
+				return $close();
+			}
+
+      
+	   if(isset($_POST['submit']))
+                     {
+						 
+	                     if(empty($_POST['mail']))
+	                           {
+		                          $emailError = "email is required";
+	                           }
+                         
+						 else
+						 {
+							 $sql = "insert into user (First-name, last-name, age, email, password, address, telephone, gender) values ('".$_POST['First-name']."',
+							'".$_POST['last-name']."','".$_POST['age']."','".$_POST['email']."','".$_POST['password']."','".$_POST['address']."',
+							'".$_POST['telephone']."','".$_POST['gender']."')";
+							echo $sql;
+							$result  = mysqli_query($con,$sql);
+							if($result)
+							{ 
+						      // header("Location:index.php");
+							}
+						 }
+
+                     
+					 }
+?>
+<!DOCTYPE html>
 <html>
     <head>
         <title>
